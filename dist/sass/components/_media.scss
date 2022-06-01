@@ -1,0 +1,77 @@
+@use 'header' as *;
+@use 'hero' as *;
+@use 'trending' as *;
+@use 'about' as *;
+@use 'latest' as *;
+@use 'seller' as *;
+@use 'footer' as *;
+
+@media (min-width: 450px){
+
+  .container{
+    max-width: 400px;
+    margin: auto;
+  }
+
+  @include footer-sm();  
+  
+}
+
+@media (min-width: 650px){
+
+  .container{
+    max-width: 600px;
+  }
+  .go-top{
+    bottom: 4.5rem
+  }
+
+  @include about-md();
+  @include latest-md();
+  @include seller-md();
+  @include footer-md();
+
+}
+
+@media (min-width: 768px){
+
+  .container{
+    max-width: 700px;
+  }
+
+  @include header-l();
+  @include hero-l();
+  @include latest-l();
+}
+
+@media (min-width: 1024px){
+
+  .container{
+    max-width: 950px;
+  }
+  @include header-xl();
+
+  .about__list,
+  .top-seller__list{
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include footer-xl();
+
+}
+
+
+@media (min-width: 1200px) {
+
+  .container{
+    max-width: 1150px;
+  }
+
+  .about__list,
+  .top-seller__list,
+  .latest__product-list{
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include header-xxl();
+}

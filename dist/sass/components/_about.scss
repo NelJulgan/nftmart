@@ -1,0 +1,120 @@
+@use '../abstract/' as *;
+@use '../utilities/' as *;
+
+.about{
+  padding: 6rem 0;
+
+  &__title{
+    text-align: center;
+    margin-bottom: 4rem ;
+  }
+
+  &__list{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin: 0 10px;
+
+    &__item{
+      background: $charstone-900;
+      padding: 2rem;
+      border-radius: 8px;
+
+      &__card{
+        position: relative;
+        padding: 3rem 1rem 2rem;
+        border: 1px solid $charstone;
+        border-radius: 4px;
+        text-align: center;
+
+
+        &::before,
+        &::after{
+          content: "";
+          position: absolute;
+          bottom: -2px;
+          right: -2px;
+          background: $arsenic;
+          border-radius: 1rem;
+          transition: $transition;
+
+                    
+        }
+
+        &::before{
+          width: 100px;
+          height: 4px;
+        }
+
+        &::after{
+          width: 4px;
+          height: 100px;
+        }
+
+       
+        
+      }
+      &:hover .about__list__item__card::before,
+      &:hover .about__list__item__card::after{
+        background: $blueviolet;
+      }
+
+      .card-number{
+        position: absolute;
+        background: $arsenic;
+        color: $charstone;
+        top: -1.5rem;
+        left: -1.5rem;
+        padding: 5px 1.5rem;
+        font-size: 2.4rem;
+        font-weight: 900;
+        border-radius: 1.8rem;
+        border: 14px solid $charstone-900;
+      }
+
+      .card-icon{
+        width: max-content;
+        margin-inline: auto;
+        margin-bottom: 3rem;
+
+        ion-icon{
+          font-size: 4rem;
+          color: $blueviolet;
+        }
+
+        &__title{
+
+          margin-bottom: 2rem;
+          font-size: 1.7rem;
+          transition: $transition;
+          text-transform: capitalize;
+
+          
+        }
+
+        &__text{
+          font-size: $fs-7;
+          font-weight: 400;
+          color: $arsenic-700;
+        }
+
+        
+      }
+      &:hover .card-icon__title{
+        color: $blueviolet;        
+      }
+      &:hover .card-number{
+        color: $platinum;
+      }
+    }
+  }
+}
+
+@mixin about-md(){
+  .about{
+
+    &__list{
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}

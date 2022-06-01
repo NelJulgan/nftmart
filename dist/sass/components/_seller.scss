@@ -1,0 +1,152 @@
+@use '../abstract/' as *;
+@use '../utilities/' as *;
+
+.top-seller{
+
+  padding: 6rem 0;
+
+  &__title{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 4rem;
+    gap: 5px;
+    font-size: 2rem;
+    text-transform: uppercase;
+    span{
+      color: $lavander;
+    }
+
+    ion-icon{
+      margin-left: 1rem;
+      font-size: 2.5rem;
+    }
+  }
+
+  &__list{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+
+    &__item{
+      background: $charstone-900;
+      padding: 1rem;
+      border-radius: 8px;
+
+      &__card{
+        position: relative;
+        padding: 1.3rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2rem;
+        border: 1px solid $arsenic-700;
+        border-radius: 4px;
+
+
+        &::before,
+        &::after{
+          content: "";
+          position: absolute;
+          bottom: -2px;
+          right: -2px;
+          background: $arsenic;
+          transition: $transition;
+        }
+
+        &::before{
+          width: 3px;
+          height: 37px;
+        }
+
+        &::after{          
+          width: 37px;
+          height: 3px;
+        }
+
+        
+        .card-number{
+          position: absolute;
+          top: -8px;
+          right: -8px;
+          background: $charstone;
+          font-size: 1.5rem;
+          color: $platinum;
+          padding: 5px 10px;
+          border-top-right-radius: 10px;
+          border: 7px solid $charstone-900;
+        }
+
+        .card-avatar{
+          position: relative;
+         
+          
+          img{
+            height: 65px;
+            border: 5px solid $charstone;
+            border-radius: 5rem;
+          }
+
+          &__badge{
+            position: absolute;
+            bottom: 5px;
+            right: 0;
+            background: rgb(243, 158, 0) ;
+            border-radius: 5rem;
+            height: 2rem;
+            width: 2rem;
+            font-size: 1.3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            ion-icon{
+              font-size: 1.3rem;
+              --ionicon-stroke-width: 6rem;
+            }
+          }
+        }
+
+        &__content{
+
+         
+
+          .card-title{
+            font-size: 1.4rem;
+            color: $arsenic-700;
+            transition: $transition;
+            
+          }
+
+          data{
+            font-size: 1.3rem;
+            color: $arsenic-700;
+            transition: $transition;
+          }
+        }     
+               
+      }
+      &:hover .top-seller__list__item__card::before,
+      &:hover .top-seller__list__item__card::after{
+        background: $lavander;
+      }
+
+      &:hover .card-title{
+        color: $lavander;
+      }
+      &:hover data{
+        color: $platinum;
+      }      
+    }
+  }
+}
+
+@mixin seller-md(){
+  .top-seller{
+
+
+    &__list{
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}

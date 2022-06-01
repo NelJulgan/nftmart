@@ -1,0 +1,109 @@
+@use 'colors' as *;
+@use '../utilities/' as *;
+
+.btn{
+  position: relative;
+  color: $platinum;
+  font-weight: 900;
+  text-transform: uppercase;
+  min-width: 130px;
+  padding: 2rem ;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  transition:  all 0.2s linear;
+  overflow: hidden;
+
+  span{
+    position: relative;
+    z-index: 2;
+   
+  }
+
+  &:hover{
+    background: $electric-indigo;
+    
+  }
+ 
+}
+
+.btn-primary{
+  background: linear-gradient(288deg, rgba(97,40,151,1) 24%, rgba(88,0,255,1) 51%, rgba(44,3,122,1) 67%, rgba(21,1,60,1) 95%);
+
+  // &::before{
+  //   content: '';
+  //   position: absolute;
+  //   bottom: 100%;
+  //   right: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   border-radius: 5px;
+  //   border: none;
+  //   background: linear-gradient(288deg, rgba(97,40,151,1) 0%, rgba(88,0,255,1) 2%, rgba(44,3,122,1) 33%, rgba(21,1,60,1) 100%);    
+  //   transition:  all 0.2s linear;
+  //   z-index: 1;
+    
+  // }   
+ 
+  &:hover{
+    opacity: 0.7;
+    background: linear-gradient(288deg, rgba(97,40,151,1) 24%, rgba(88,0,255,1) 51%, rgba(44,3,122,1) 67%, rgba(21,1,60,1) 95%);
+   
+  }
+
+ 
+}
+
+// .btn-primary.btn:hover::before{
+//   bottom: 0;
+// }
+
+
+
+
+
+
+.btn-secondary{
+  border: solid 1px $blueviolet;
+  opacity: 0.7;
+
+  &:hover{
+    opacity: 1;
+  }
+}
+
+.go-top{
+  background: $charstone-900;
+  color: $arsenic-700;
+  position: fixed;
+  bottom: 75px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border: 4px solid $arsenic;
+  border-radius: 5rem;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 300ms ease;
+
+  ion-icon{
+    font-size: 2.5rem;
+  }
+
+  &.active{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transition: all 300ms ease;
+  }
+
+  &:is(:hover, :focus){
+    background: $electric-indigo;
+    border: 4px solid $lavander;
+    color: $platinum;
+  }
+
+}

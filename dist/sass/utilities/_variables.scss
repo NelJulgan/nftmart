@@ -1,0 +1,15 @@
+@use '../abstract/colors' as *;
+.section-title {
+  
+  color: $white-800;  
+  font-weight: 700;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  margin-bottom: 4rem; 
+  
+  
+}
+
+$transition: 0.15s ease-in-out;
+
