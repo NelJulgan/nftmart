@@ -1,0 +1,198 @@
+@use '../abstract/' as *;
+@use '../utilities/' as *;
+
+.latest{
+
+  background: $charstone-900;
+  padding: 6rem 0;
+
+  .section-header-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 4rem;
+
+    .section-title{
+      margin: 0;
+    }
+  }
+
+  &__product-list{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    
+
+    &__item{
+
+      margin-bottom: 3rem ;
+      overflow: hidden;
+
+      &__card{
+        position: relative;
+        overflow: hidden;
+       
+
+        &__banner{
+          border-radius: 8px;
+          
+          img{
+            
+            object-fit: cover;
+            width: 100%;
+            height: 400px;
+            border-radius: 8px;
+          }
+
+          .place-bid-btn{
+            background: $electric-indigo;
+            color: $white;
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            font-size: 1.6rem;
+            transform: translate(-50%, 0);
+            text-transform: capitalize;
+            padding: 8px 16px;
+            opacity: 0;
+            transition: $transition;
+          }
+        }
+
+        &:is(:hover, :focus) .place-bid-btn,
+        .place-bid-btn:focus{
+          transform: translate(-50%, -50%);
+          opacity: 1;
+        }
+
+        &:is(:hover, :focus) .product-title{
+          color: $lavander
+        }
+      }
+
+      &__actions{
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .product-card-menu,
+        .add-to-whishlist{
+          width: 25px;
+          height: 25px;
+          display: grid;
+          place-items: center;
+          border-radius: 5rem;
+        }
+
+        .product-card-menu{
+          background: $lavander;
+          box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        }
+
+        .add-to-whishlist{
+          background: $arsenic;
+          color: $platinum;
+          box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+          &:hover{
+            background: $arsenic-700;
+            color: red;
+          }
+        }
+
+      }
+
+      &__content{
+        background: rgba(8, 9, 12, 0.8);
+        backdrop-filter: blur(4px);
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100%;
+        bottom: 0;
+        border-radius: 8px;
+        padding: 1rem ;
+
+        .product-title{
+          margin-bottom: 10px;
+          font-size: 1.5rem;
+          color: $white-800;
+          text-align: center;
+        }
+
+        &__meta{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 1rem;
+
+          
+
+          &__author{
+            display: flex;
+            justify-items: flex-start;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+            a{
+              color: $platinum;
+
+              &:hover{
+                color: $lavander;
+              }
+            }
+
+            img{
+             height: 50px;
+            }
+          }
+
+          .product-price{
+            font-size: 1.2rem;
+          }
+        }
+
+        .product-footer{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: $fs-8;
+
+          .tag{
+            background: $lavander;
+            padding: 4px 10px;
+            border-radius: 4px;
+            color: $platinum;
+
+          }
+        }
+        
+      }
+    }
+  }
+}
+
+@mixin latest-md(){
+  .latest{
+
+
+    &__product-list{
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+@mixin latest-l(){
+  .latest{
+
+
+    &__product-list{
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

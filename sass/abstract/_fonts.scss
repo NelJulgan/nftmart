@@ -1,0 +1,36 @@
+@use 'colors' as *;
+
+$fs-1: 32px;
+$fs-2: 20px;
+$fs-3: 19px;
+$fs-4: 18px;
+$fs-5: 16px;
+$fs-6: 15px;
+$fs-7: 14px;
+$fs-8: 13px;
+$fs-9: 12px;
+$fs-10: 11px;
+
+.h1,
+.h2,
+.h3 { color: $platinum; }
+
+.h1 {
+  font-size: $fs-1;
+  text-transform: capitalize;
+}
+
+.h2 { font-size: $fs-3; }
+
+.h3 { font-size: $fs-2; }
+
+.h4 {
+  color: inherit;
+  font-size: $fs-5;
+  font-weight: 400;
+}
+
+.h5 {
+  font-size: $fs-6;
+  font-weight: 400;
+}

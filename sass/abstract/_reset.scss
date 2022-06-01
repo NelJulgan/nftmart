@@ -1,0 +1,61 @@
+@use 'colors' as *;
+
+*,
+*::after,
+*::before{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+}
+
+li{
+  list-style: none;
+}
+
+button{
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.btn, img, input, a, span, ion-icon{
+  display: block;
+}
+
+input{
+  font: inherit;
+  border: none;
+}
+
+button, a, input, [tabindex]{
+  outline-offset: 4px;
+}
+
+html{
+  color: $platinum;
+  line-height: 1.3;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar-thumb { background: $arsenic }
+
+::-webkit-scrollbar-thumb:hover { background: $charstone;}
+
+::-webkit-scrollbar-button { height: 5px; }
+
+
+
+
+body{
+  background: #000;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: $platinum;
+  min-width: 280px;
+  font-size: 10px;
+}
